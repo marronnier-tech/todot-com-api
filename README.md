@@ -1,3 +1,6 @@
+# 移転前の履歴は以下で見られます。
+[以前のレポジトリ](https://github.com/tocchy-tocchy/go_diary)
+
 # 目次
 - [API一覧](#API一覧)
 - [APIリクエスト・レスポンス詳細](#APIリクエスト・レスポンス詳細)
