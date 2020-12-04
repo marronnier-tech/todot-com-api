@@ -3,7 +3,7 @@ package ui
 import (
 	stc "strconv"
 
-	"../app/todo"
+	"github.com/tocchy-tocchy/todot-com-api/app/todo"
 
 	"github.com/gin-gonic/gin"
 )

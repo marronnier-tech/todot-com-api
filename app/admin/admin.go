@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"../../domain"
-	"../../infra"
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 	"golang.org/x/crypto/bcrypt"
 )
 

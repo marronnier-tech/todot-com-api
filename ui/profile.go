@@ -3,9 +3,9 @@ package ui
 import (
 	"fmt"
 
-	"../app/admin"
-	"../app/profile"
 	"github.com/gin-gonic/gin"
+	"github.com/tocchy-tocchy/todot-com-api/app/admin"
+	"github.com/tocchy-tocchy/todot-com-api/app/profile"
 )
 
 func GetMyProfile(c *gin.Context) {
