@@ -1,13 +1,13 @@
 package todo
 
 import (
-	"../align"
-	"../getid"
-	"../timecalc"
+	"github.com/tocchy-tocchy/todot-com-api/app/align"
+	"github.com/tocchy-tocchy/todot-com-api/app/getid"
+	"github.com/tocchy-tocchy/todot-com-api/app/timecalc"
 
-	"../../domain"
-	"../../infra"
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 )
 
 func ToGetAll(limit int, page int, order string) (out []allTodoArray, err error) {

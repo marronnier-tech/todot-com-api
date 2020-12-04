@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"./ui"
+	"github.com/tocchy-tocchy/todot-com-api/ui"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"

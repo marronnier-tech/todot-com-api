@@ -1,8 +1,8 @@
 package todo
 
 import (
-	"../../domain"
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 )
 
 type allTodoArray struct {

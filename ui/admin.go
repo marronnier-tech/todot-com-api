@@ -3,7 +3,7 @@ package ui
 import (
 	"errors"
 
-	"../app/admin"
+	"github.com/tocchy-tocchy/todot-com-api/app/admin"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"

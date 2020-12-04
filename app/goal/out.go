@@ -1,7 +1,7 @@
 package goal
 
 import (
-	"../../domain"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
 )
 
 type allGoalArray struct {

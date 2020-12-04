@@ -4,8 +4,8 @@ import (
 	"fmt"
 	stc "strconv"
 
-	"../app/admin"
-	"../app/todo"
+	"github.com/tocchy-tocchy/todot-com-api/app/admin"
+	"github.com/tocchy-tocchy/todot-com-api/app/todo"
 
 	"github.com/gin-gonic/gin"
 )

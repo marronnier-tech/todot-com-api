@@ -3,7 +3,7 @@ package infra
 import (
 	"fmt"
 
-	"./def"
+	"github.com/tocchy-tocchy/todot-com-api/infra/def"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

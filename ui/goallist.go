@@ -4,9 +4,9 @@ import (
 	"fmt"
 	stc "strconv"
 
-	"../app/admin"
-	"../app/goal"
 	"github.com/gin-gonic/gin"
+	"github.com/tocchy-tocchy/todot-com-api/app/admin"
+	"github.com/tocchy-tocchy/todot-com-api/app/goal"
 )
 
 func GetGoal(c *gin.Context) {

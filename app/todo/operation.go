@@ -4,11 +4,11 @@ import (
 	"errors"
 	"time"
 
-	"../../domain"
-	"../../infra"
-	"../../infra/table"
-	"../timecalc"
 	"github.com/lib/pq"
+	"github.com/tocchy-tocchy/todot-com-api/app/timecalc"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 	"gorm.io/gorm"
 )
 
