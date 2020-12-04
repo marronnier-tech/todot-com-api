@@ -3,9 +3,9 @@ package profile
 import (
 	"time"
 
-	"../../domain"
-	"../../infra"
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 )
 
 func ToPatch(userid int, HN string, Img string, FinalGoal string,

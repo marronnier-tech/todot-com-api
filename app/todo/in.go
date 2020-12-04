@@ -1,7 +1,7 @@
 package todo
 
 import (
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 )
 
 type inGetAll struct {

@@ -1,8 +1,8 @@
 package getid
 
 import (
-	"../../domain"
-	"../../infra/table"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra/table"
 	"gorm.io/gorm"
 )
 

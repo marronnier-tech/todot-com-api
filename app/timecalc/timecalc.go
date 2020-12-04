@@ -5,8 +5,8 @@ import (
 	stc "strconv"
 	"time"
 
-	"../../domain"
 	"github.com/lib/pq"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
 )
 
 func DifftoNow(previous pq.NullTime) (res domain.AchieveInfo) {

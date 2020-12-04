@@ -1,11 +1,11 @@
 package goal
 
 import (
-	"../../domain"
-	"../../infra"
-	"../align"
-	"../getid"
-	"../timecalc"
+	"github.com/tocchy-tocchy/todot-com-api/app/align"
+	"github.com/tocchy-tocchy/todot-com-api/app/getid"
+	"github.com/tocchy-tocchy/todot-com-api/app/timecalc"
+	"github.com/tocchy-tocchy/todot-com-api/domain"
+	"github.com/tocchy-tocchy/todot-com-api/infra"
 )
 
 func ToGetAllGoal(limit int, page int, order string) (out []allGoalArray, err error) {
