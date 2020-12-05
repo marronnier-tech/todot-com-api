@@ -16,8 +16,9 @@ const (
 )
 
 type FromEnv struct {
-	User string
-	Pass string
+	User   string
+	Pass   string
+	JawsDB string
 }
 
 func GetEnv() (out FromEnv, err error) {
@@ -26,8 +27,9 @@ func GetEnv() (out FromEnv, err error) {
 		return
 	}
 	out = FromEnv{
-		User: os.Getenv("USER"),
-		Pass: os.Getenv("ENVPASS"),
+		User:   os.Getenv("USER"),
+		Pass:   os.Getenv("ENVPASS"),
+		JawsDB: os.Getenv("JAWSDB_MAUVE_URL"),
 	}
 	return
 }
