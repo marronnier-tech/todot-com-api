@@ -2,6 +2,7 @@ package infra
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/tocchy-tocchy/todot-com-api/infra/def"
 
@@ -13,53 +14,12 @@ func DBConnect() (tx *gorm.DB, err error) {
 
 	env, err := def.GetEnv()
 
-	if err != nil {
-		return
-	}
-
 	var connect string
 
-	if env.JawsDB != "" {
-		checker := 0
-		var sqlUser string
-		var sqlPass string
-		var sqlHost string
-		var sqlDatabase string
-
-		for i, jw := range env.JawsDB {
-			if i < 7 {
-				continue
-			}
-			if checker == 0 {
-				if jw == ':' {
-					checker++
-					continue
-				}
-				sqlUser += string(jw)
-			} else if checker == 1 {
-				if jw == '@' {
-					checker++
-					continue
-				}
-				sqlPass += string(jw)
-			} else if checker == 2 {
-				if jw == '/' {
-					checker++
-					continue
-				}
-				sqlHost += string(jw)
-			} else if checker == 3 {
-				if jw == '?' {
-					break
-				}
-				sqlDatabase += string(jw)
-			}
-
-		}
-
+	if err != nil {
 		connect = fmt.Sprintf(
 			"%s:%s@tcp(%s:3306)/%s?parseTime=%s",
-			string(sqlUser), string(sqlPass), string(sqlHost), string(sqlDatabase), def.ParseTime)
+			os.Getenv("DB_USERNAME"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_HOSTNAME"), os.Getenv("DB_NAME"), def.ParseTime)
 
 	} else {
 		connect = fmt.Sprintf(
