@@ -1,7 +1,7 @@
 module github.com/tocchy-tocchy/todot-com-api
 
-// +heroku goVersion go1.14
-go 1.14
+// +heroku goVersion go1.15
+go 1.15
 
 require (
 	github.com/gin-contrib/sessions v0.0.3
