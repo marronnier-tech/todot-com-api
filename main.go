@@ -18,12 +18,7 @@ func main() {
 	// r.Static("../../../front/templates", "./../../../front/templates")
 	r.StaticFS("/top", http.Dir("./../../../front/templates"))
 
-	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://todot-com.herokuapp.com"}
-	corsConfig.AllowMethods = []string{"GET", "POST", "PATCH", "DELETE"}
-	corsConfig.AllowCredentials = true
-
-	r.Use(cors.New(corsConfig))
+	r.Use(cors.New(ctrler.CorsConfig()))
 
 	store := cookie.NewStore([]byte("secret"))
 	r.Use(sessions.Sessions("useradmin", store))
