@@ -19,7 +19,7 @@ func main() {
 	r.StaticFS("/top", http.Dir("./../../../front/templates"))
 
 	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://todot-com.herokuapp.com/"}
+	corsConfig.AllowOrigins = []string{"http://todot-com.herokuapp.com"}
 	corsConfig.AllowMethods = []string{"GET", "POST", "PATCH", "DELETE"}
 	corsConfig.AllowCredentials = true
 
