@@ -1,4 +1,4 @@
-package ui
+package ctrler
 
 import (
 	"github.com/gin-gonic/gin"
