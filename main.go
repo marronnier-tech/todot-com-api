@@ -3,8 +3,9 @@ package main
 import (
 	"net/http"
 
-	"github.com/tocchy-tocchy/todot-com-api/ui"
+	"github.com/tocchy-tocchy/todot-com-api/ctrler"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
@@ -17,50 +18,57 @@ func main() {
 	// r.Static("../../../front/templates", "./../../../front/templates")
 	r.StaticFS("/top", http.Dir("./../../../front/templates"))
 
+	corsConfig := cors.DefaultConfig()
+	corsConfig.AllowOrigins = []string{"http://todot-com.herokuapp.com/"}
+	corsConfig.AllowMethods = []string{"GET", "POST", "PATCH", "DELETE"}
+	corsConfig.AllowCredentials = true
+
+	r.Use(cors.New(corsConfig))
+
 	store := cookie.NewStore([]byte("secret"))
 	r.Use(sessions.Sessions("useradmin", store))
 
 	todolist := r.Group("/todo")
 	{
-		todolist.GET("", ui.GetTodo)
-		todolist.GET("/:name", ui.GetOneUserTodo)
+		todolist.GET("", ctrler.GetTodo)
+		todolist.GET("/:name", ctrler.GetOneUserTodo)
 	}
 
 	goallist := r.Group("/goal")
 	{
-		goallist.GET("", ui.GetGoal)
-		goallist.GET("/:name", ui.GetOneUserGoal)
+		goallist.GET("", ctrler.GetGoal)
+		goallist.GET("/:name", ctrler.GetOneUserGoal)
 	}
 
 	my := r.Group("/mypage")
 	{
-		my.GET("", ui.MyTodo)
-		my.POST("", ui.PostTodo)
-		my.GET("/goal", ui.MyGoal)
-		my.DELETE("/:id", ui.DeleteTodo)
+		my.GET("", ctrler.MyTodo)
+		my.POST("", ctrler.PostTodo)
+		my.GET("/goal", ctrler.MyGoal)
+		my.DELETE("/:id", ctrler.DeleteTodo)
 
-		my.POST("/:id/today", ui.PutAchieveTodo)
-		my.DELETE("/:id/today", ui.ClearAchieveTodo)
-		my.PATCH("/:id/goal", ui.PatchGoal)
+		my.POST("/:id/today", ctrler.PutAchieveTodo)
+		my.DELETE("/:id/today", ctrler.ClearAchieveTodo)
+		my.PATCH("/:id/goal", ctrler.PatchGoal)
 
 	}
 
 	profile := r.Group("/profile")
 	{
-		profile.GET("", ui.GetMyProfile)
-		profile.PATCH("", ui.PatchProfile)
+		profile.GET("", ctrler.GetMyProfile)
+		profile.PATCH("", ctrler.PatchProfile)
 
-		profile.GET("/:name", ui.GetOnesProfile)
+		profile.GET("/:name", ctrler.GetOnesProfile)
 
 	}
 
-	r.POST("/register", ui.Register)
+	r.POST("/register", ctrler.Register)
 
-	r.POST("/login", ui.Login)
-	r.DELETE("/logout", ui.Logout)
-	r.GET("/adminflag", ui.AdminFlag)
+	r.POST("/login", ctrler.Login)
+	r.DELETE("/logout", ctrler.Logout)
+	r.GET("/adminflag", ctrler.AdminFlag)
 
-	r.DELETE("/delete", ui.DeleteMembership)
+	r.DELETE("/delete", ctrler.DeleteMembership)
 
 	r.Run()
 
