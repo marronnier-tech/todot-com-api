@@ -11,12 +11,14 @@ func CorsConfig() cors.Config {
 		AllowOrigins: []string{
 			"https://todot-com.herokuapp.com",
 			"https://todot-com-api.herokuapp.com",
+			"http://localhost:4200",
 		},
 		AllowMethods: []string{
 			"GET",
 			"POST",
 			"PATCH",
 			"DELETE",
+			"OPTIONS",
 		},
 		AllowHeaders: []string{
 			"Access-Control-Allow-Credentials",
