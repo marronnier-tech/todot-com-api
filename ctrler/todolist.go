@@ -65,7 +65,7 @@ func MyTodo(c *gin.Context) {
 	_, name, err := SessionLogin(c)
 
 	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
+		c.JSON(403, gin.H{"error": "セッション中にエラーが発生しました"})
 		return
 	}
 	order := c.DefaultQuery("order", "last_achieved")
