@@ -29,7 +29,7 @@ func SessionLogin(c *gin.Context) (id int, user string, err error) {
 	id, user, err = admin.Validation(strname, strpassword)
 
 	if err != nil {
-		c.JSON(403, gin.H{"error": "Cookieの情報が不正です"})
+		c.JSON(403, gin.H{"error": "セッション情報が不正です"})
 		c.Abort()
 	}
 	return
